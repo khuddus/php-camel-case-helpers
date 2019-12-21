@@ -28,7 +28,7 @@ vendor/
 Via Composer
 
 ``` bash
-$ composer require khuddus/php-camel-case-helpers
+$ composer require khuddus/camel_case_json_php
 ```
 
 ## Usage
