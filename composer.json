@@ -1,12 +1,12 @@
 {
-    "name": "khuddus/camel_case_json_php",
+    "name": "khuddus/php-camel-case-helpers",
     "type": "library",
     "description": "A php tool to convert underscored or dashed arrays to camelcased arrays",
     "keywords": [
         "khuddus",
         "camel case json php"
     ],
-    "homepage": "https://github.com/khuddus/camel-case-json-php",
+    "homepage": "https://github.com/khuddus/php-camel-case-helpers",
     "license": "MIT",
     "authors": [
         {
