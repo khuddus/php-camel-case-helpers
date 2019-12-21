@@ -68,6 +68,7 @@ ArrayHelper::convertToCamelCasedArray([
                     ]
                 ]
             ]
+*/
 ```
 
 ## Change log
