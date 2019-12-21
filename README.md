@@ -28,7 +28,7 @@ vendor/
 Via Composer
 
 ``` bash
-$ composer require khuddus/camel_case_json_php
+$ composer require khuddus/php-camel-case-helpers
 ```
 
 ## Usage
@@ -98,13 +98,13 @@ If you discover any security related issues, please email khuddus1+github@gmail.
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/khuddus/php_camel_case_helpers.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/khuddus/php-camel-case-helpers.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/khuddus/php-camel-case-helpers/master.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/khuddus/php_camel_case_helpers.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/khuddus/php-camel-case-helpers.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/khuddus/php_camel_case_helpers
+[link-packagist]: https://packagist.org/packages/khuddus/php-camel-case-helpers
 [link-travis]: https://travis-ci.org/khuddus/php-camel-case-helpers
-[link-downloads]: https://packagist.org/packages/khuddus/php_camel_case_helpers
+[link-downloads]: https://packagist.org/packages/khuddus/php-camel-case-helpers
 [link-author]: https://github.com/khuddus
 [link-contributors]: ../../contributors
