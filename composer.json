@@ -3,10 +3,14 @@
     "type": "library",
     "description": "A php tool to convert underscored or dashed arrays to camelcased arrays",
     "keywords": [
-        "khuddus",
-        "camel case json php"
+            "camel case json php",
+            "php camel case array helper",
+            "camel case string helper",
+            "php camel case",
+            "khuddus"
     ],
     "homepage": "https://github.com/khuddus/php-camel-case-helpers",
+    "minimum-stability": "stable",
     "license": "MIT",
     "authors": [
         {
