@@ -34,7 +34,9 @@ $ composer require khuddus/php-camel-case-helpers dev-master
 ## Usage
 
 ``` php
-$skeleton = new League\Skeleton();
+use Khuddus\Helpers\CamelCase\ArrayHelper;
+use Khuddus\Helpers\CamelCase\StringHelper;
+
 echo StringHelper::convertToCamelCasedString("Hello world"); //echoes helloWorld
 $convertedArray = ArrayHelper::convertToCamelCasedArray(['hello world'=>1]); //converts to ['helloWorld'=>1]
 $convertedArray = ArrayHelper::convertToCamelCasedArray(['hello world'=>1]); //converts to ['helloWorld'=>1]
