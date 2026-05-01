@@ -2,86 +2,94 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
+[![Build Status][ico-ci]][link-ci]
 [![Total Downloads][ico-downloads]][link-downloads]
 
+A PHP library that provides camel case helpers. Convert array keys or strings containing underscores, hyphens, or spaces into camelCase.
 
-A php library provides camel case helpers. You can use array helper, to convert an array to camelCase keyed array, or you can use string helper to convert a string to camel case.
+## Requirements
 
-## Structure
-
-If any of the following are applicable to your project, then the directory structure should follow industry best practices by being named the following.
-
-```
-bin/        
-build/
-docs/
-config/
-src/
-tests/
-vendor/
-```
-
+- PHP >= 8.1
 
 ## Install
 
-Via Composer
-
 ``` bash
-$ composer require khuddus/php-camel-case-helpers
+composer require khuddus/php-camel-case-helpers
 ```
 
 ## Usage
 
+### String Helper
+
+Converts a string to camelCase.
+
 ``` php
-use Khuddus\Helpers\CamelCase\ArrayHelper;
 use Khuddus\Helpers\CamelCase\StringHelper;
 
-echo StringHelper::convertToCamelCasedString("Hello world"); //echoes helloWorld
-$convertedArray = ArrayHelper::convertToCamelCasedArray(['hello world'=>1]); //converts to ['helloWorld'=>1]
-$convertedArray = ArrayHelper::convertToCamelCasedArray(['hello world'=>1]); //converts to ['helloWorld'=>1]
+StringHelper::convertToCamelCasedString("Hello world");       // helloWorld
+StringHelper::convertToCamelCasedString("Hello-world");       // helloWorld
+StringHelper::convertToCamelCasedString("Hello_world");       // helloWorld
+StringHelper::convertToCamelCasedString("hello_beautiful_world"); // helloBeautifulWorld
+```
+
+### Array Helper
+
+Recursively converts all non-numeric array keys to camelCase.
+
+``` php
+use Khuddus\Helpers\CamelCase\ArrayHelper;
+
+// Convert all levels (default)
+ArrayHelper::convertToCamelCasedArray(['hello_world' => 1]);
+// ['helloWorld' => 1]
+
+// Limit conversion depth with the optional $level parameter
+// $level = 0  → no conversion
+// $level = 1  → top-level keys only
+// $level = null (default) → all levels
+
 ArrayHelper::convertToCamelCasedArray([
-                'Hello World'=>[
-                    'My----World'=>'this world'
+    'Hello World' => [
+        'My----World' => 'this world',
+    ],
+    [
+        'another -_-_WOrld' => [
+            'Busy_World' => [
+                'instruMental World' => [
+                    'courageous--World' => 'mine',
                 ],
-                [
-                'another -_-_WOrld'=>[
-                    'Busy_World'=>[
-                        'instruMental World'=>[
-                            'courageous--World'=>'mine'
-                            ]
-                        ]
-                    ]
-                ]
-            ], 
-            3);
-/* converts it to 
-            [
-                'helloWorld'=>[
-                    'myWorld'=>'this world'
+            ],
+        ],
+    ],
+], 3);
+
+/*
+[
+    'helloWorld' => [
+        'myWorld' => 'this world',
+    ],
+    [
+        'anotherWOrld' => [
+            'busyWorld' => [
+                'instruMental World' => [   // level 3 — not converted
+                    'courageous--World' => 'mine',
                 ],
-                [
-                'anotherWOrld'=>[
-                    'busyWorld'=>[
-                        'instruMental World'=>[
-                            'courageous--World'=>'mine'
-                            ]
-                        ]
-                    ]
-                ]
-            ]
+            ],
+        ],
+    ],
+]
 */
+```
+
+## Testing
+
+``` bash
+composer test
 ```
 
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Testing
-
-``` bash
-$ composer test
-```
 
 ## Contributing
 
@@ -102,11 +110,11 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 [ico-version]: https://img.shields.io/packagist/v/khuddus/php-camel-case-helpers.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/khuddus/php-camel-case-helpers/master.svg?style=flat-square
+[ico-ci]: https://img.shields.io/github/actions/workflow/status/khuddus/php-camel-case-helpers/ci.yml?branch=master&style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/khuddus/php-camel-case-helpers.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/khuddus/php-camel-case-helpers
-[link-travis]: https://travis-ci.org/khuddus/php-camel-case-helpers
+[link-ci]: https://github.com/khuddus/php-camel-case-helpers/actions/workflows/ci.yml
 [link-downloads]: https://packagist.org/packages/khuddus/php-camel-case-helpers
 [link-author]: https://github.com/khuddus
 [link-contributors]: ../../contributors
