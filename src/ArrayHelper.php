@@ -6,23 +6,23 @@ namespace Khuddus\Helpers\CamelCase;
 
 class ArrayHelper
 {
-
     /**
      * Converts the given array into camelCased array
      *
      * @param array $arr array to convert
      *
-     * @param int $level number of levels you want to convert. Default is all
+     * @param int|null $level number of levels you want to convert. Default is all
      *
      * @return array Returns the array converted into camel case
      */
-    public static function convertToCamelCasedArray(array $arr, int $level = null): array
+    public static function convertToCamelCasedArray(array $arr, ?int $level = null): array
     {
         return ArrayHelper::getCamelCaseConvertedArray($arr, $level);
     }
-    private static function getCamelCaseConvertedArray(array $arr, int $level = null, $iteration = 0)
+
+    private static function getCamelCaseConvertedArray(array $arr, ?int $level = null, int $iteration = 0): array
     {
-        if (!is_null($level) && $level == $iteration) {
+        if (!is_null($level) && $level === $iteration) {
             return $arr;
         }
         $camelCaseConvertedArray = [];

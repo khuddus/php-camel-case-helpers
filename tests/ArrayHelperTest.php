@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 namespace Khuddus\Helpers\CamelCase\Tests;
 
-require_once 'vendor/autoload.php';
-
 use Khuddus\Helpers\CamelCase\ArrayHelper;
 use PHPUnit\Framework\TestCase;
 
